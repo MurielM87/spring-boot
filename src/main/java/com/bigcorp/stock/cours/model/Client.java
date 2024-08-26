@@ -3,6 +3,7 @@ package com.bigcorp.stock.cours.model;
 import jakarta.persistence.*;
 
 @Entity
+//@Table(name = "clientsDB")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

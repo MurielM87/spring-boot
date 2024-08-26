@@ -19,9 +19,6 @@ public class ClientService {
     @Transactional
     public Client save(Client client) {
         Client clientSaved = this.clientDao.save(client);
-        if(client.getPremium() != null) {
-            this.premiumService.save(client.getPremium());
-        }
         return clientSaved;
     }
 
@@ -35,10 +32,7 @@ public class ClientService {
 
     @Transactional
     public void deleteById(Long id) {
-        Optional<Client> optionalClient = this.clientDao.findById(id);
-        if(optionalClient.isPresent()) {
-            this.clientDao.deleteById(id);
-        }
+        this.clientDao.deleteById(id);
     }
 
 }

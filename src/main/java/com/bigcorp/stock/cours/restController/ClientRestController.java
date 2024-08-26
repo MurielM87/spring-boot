@@ -16,7 +16,7 @@ public class ClientRestController {
     private ClientService clientService;
 
     @GetMapping("/{id}")
-    public ResponseEntity getClient(@PathVariable("id") Long id) {
+    public ResponseEntity getClientById(@PathVariable("id") Long id) {
         if(id == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
@@ -38,14 +38,11 @@ public class ClientRestController {
 
     @PostMapping
     public Client save(@RequestBody Client client) {
-        if(client.getId() == null) {
-            return this.clientService.save(client);
-        }
-        return client;
+       return this.clientService.save(client);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteById(@PathVariable("id") Long id) {
+    public ResponseEntity deleteClientById(@PathVariable("id") Long id) {
         if(id == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }

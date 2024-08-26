@@ -15,9 +15,9 @@ public class ManagerController {
     @GetMapping("/{id}")
     public NewManager getManager(@PathVariable("id") Long id) {
         NewManager manager = new NewManager();
-        manager.setId(id);
-        manager.setNom("Roger");
-        manager.setSalaire(3000);
+//        manager.setId(id);
+//        manager.setNom("Roger");
+//        manager.setSalaire(3000);
         return manager;
     }
 
